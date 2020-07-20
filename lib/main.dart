@@ -30,10 +30,9 @@ class MainView extends StatelessWidget {
       child: Consumer<ViewModel>(builder: (context, model, child) {
         return Scaffold(
           appBar: AppBar(title: Text(model.title)),
-          body: Column(
+          body: Stack(
             children: <Widget>[
-              SizedBox(height: 40),
-              buildFormField(context),
+              Positioned(top: 40, child: buildFormField(context)),
             ],
           ),
         );
