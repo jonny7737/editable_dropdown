@@ -148,12 +148,11 @@ class ViewModel extends ChangeNotifier {
     prefs.setStringList('suggestions', suggestions);
   }
 
-  String title = 'Editable DropDown List Home Page';
+  String title = 'Editable DropDown List';
 
   GlobalKey<DropdownSuggestionsFormFieldState> dropDownSuggestionKey = GlobalKey<DropdownSuggestionsFormFieldState>();
 
-  List<String> suggestions = ['daily', 'twice daily', 'before bed', 'with food', 'with water'];
-  String selectedSuggestion = '';
+  List<String> suggestions = ['daily', 'twice daily', 'before bed'];
   String currentValue;
   int selectedIndex;
 
@@ -164,11 +163,9 @@ class ViewModel extends ChangeNotifier {
   }
 
   void onSelected(String value) {
-//    print('$currentValue : $value');
     dropDownSuggestionKey.currentState.onSelect(value);
     if (value == currentValue) return;
     currentValue = value;
-//    print('$currentValue');
   }
 
   void onSubmitted(String value) {
